@@ -4,10 +4,11 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class ProcessoSeletivo {
     public static void main(String[] args) throws Exception {
-        System.out.println("Processo seletivo");
+        System.out.println("PROCESSO SELETIVO");
 
         analisarCandidato(2000.0);
         selecaoCandidatos();
+        imprimirSelecionados();
     }
 
     static void analisarCandidato(double salarioPretendido){
@@ -45,5 +46,13 @@ public class ProcessoSeletivo {
 
     static double valorPretendido() {
         return ThreadLocalRandom.current().nextDouble(1800,2200);
+    }
+
+    static void imprimirSelecionados(){
+        String[] candidatosSelecionados = {"Ana", "Ivo", "João", "Otto", "Maia"};
+
+        for (int i=0; i<candidatosSelecionados.length; i++) {
+            System.out.println("O candidato de nº " + (i+1) + " é o candidato " + candidatosSelecionados[i] );
+        }
     }
 }
